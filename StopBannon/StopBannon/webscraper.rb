@@ -48,7 +48,10 @@ def webscrap()
                 p = Politician.new(name, party, phone, state, 'Rep')
                 reps[name] = p
                 puts name
-                $all_politicians.push([name, party, phone, state, 'Rep', false])
+                
+                last_name = name.split(',')[0]
+                first_name = name.split(',')[1]
+                $all_politicians.push([last_name, first_name, party, phone, state, 'Rep', false])
 
             end
         end
@@ -63,10 +66,12 @@ def webscrap()
         state = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[1]
         phone = senate_page.css("td.contenttext[align='left']")[i+1].text
         
+        last_name = name.split(',')[0]
+        first_name = name.split(',')[1]
         p = Politician.new(name, party, phone, state, 'Sen')
         reps[name] = p
         puts name
-        $all_politicians.push([name, party, phone, state, 'Sen', false])
+        $all_politicians.push([last_name, first_name, party, phone, state, 'Sen', false])
     end
     
     return reps
