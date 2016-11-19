@@ -1,6 +1,7 @@
 require 'Nokogiri'
 require 'json'
 require 'open-uri'
+require 'csv'
 
 $states = { "Alabama" => "AL" , "Alaska" => "AK", "Arizona" => "AZ", "Arkansas" => "AR",
 "California" => "CA" , "Colorado" => "CO",  "Connecticut" => "CT", "Delaware" => "DE",
@@ -23,8 +24,11 @@ class Politician
         @phone = phone
         @state = state
         @position = position
+        @denounced = false
     end
 end
+
+$all_politicians = []
 
 def webscrap()
     
@@ -44,6 +48,7 @@ def webscrap()
                 p = Politician.new(name, party, phone, state, 'Rep')
                 reps[name] = p
                 puts name
+                $all_politicians.push([name, party, phone, state, 'Rep', false])
 
             end
         end
@@ -56,11 +61,12 @@ def webscrap()
         name = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[0]
         party = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[0]
         state = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[1]
-        number = senate_page.css("td.contenttext[align='left']")[i+1].text
+        phone = senate_page.css("td.contenttext[align='left']")[i+1].text
         
-        p = Politician.new(name, party, number, state, 'Sen')
+        p = Politician.new(name, party, phone, state, 'Sen')
         reps[name] = p
         puts name
+        $all_politicians.push([name, party, phone, state, 'Sen', false])
     end
     
     return reps
@@ -75,5 +81,12 @@ def jstreet_webscrap()
     }
 end
 
+def write_to_file()
+    webscrap()
+    csv_string = $all_politicians.map(&:to_csv).join
+    file = 'politicians.csv'
+    IO.write(file, csv_string)
+end
+
 # jstreet_webscrap()
-webscrap()
+write_to_file()
