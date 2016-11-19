@@ -2,7 +2,7 @@ require 'Nokogiri'
 require 'json'
 require 'open-uri'
 
-states = { "Alabama" => "AL" , "Alaska" => "AK", "Arizona" => "AZ", "Arkansas" => "AR",
+$states = { "Alabama" => "AL" , "Alaska" => "AK", "Arizona" => "AZ", "Arkansas" => "AR",
 "California" => "CA" , "Colorado" => "CO",  "Connecticut" => "CT", "Delaware" => "DE",
 "District Of Columbia" => "DC", "Florida" => "FL", "Georgia" => "GA", "Hawaii" => "HI",
 "Idaho" => "ID", "Illinois" => "IL", "Indiana" => "IN", "Iowa" => "IA", "Kansas" => "KS",
@@ -34,7 +34,7 @@ def webscrap()
     
     reps = Hash.new
     (0..55).each do |i|
-        state = states[parse_page.css("h2")[i+1].text]
+        state = $states[parse_page.css("h2")[i+1].text]
         if state_list[i].css("tr")
             state_list[i].css("tr").each do |s|
                 name = s.css("td")[1].text.gsub(/\s+/, "")
@@ -43,18 +43,20 @@ def webscrap()
                 
                 p = Politician.new(name, party, phone, state, 'Rep')
                 reps[name] = p
-                puts name
+                #puts name
 
             end
         end
     end
     
-    senators_url = 'www.senate.gov/general/contact_information/senators_cfm.cfm'
+    senators_url = 'http://www.senate.gov/senators/contact/'
     senate_page = Nokogiri::HTML(open(url))
     
     for i in (0..300).step(3)
-        
-        name = senate_page.css("td.contenttext[align='left']")[0].text.split("\n")[0]
+        puts "hello"
+        puts i
+        puts senate_page.css("td.contenttext[align='left']")[0]
+        name = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[0]
         party = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[0]
         state = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[1]
         number = senate_page.css("td.contenttext[align='left']")[i+1].text
@@ -76,4 +78,5 @@ def jstreet_webscrap()
     }
 end
 
-jstreet_webscrap()
+# jstreet_webscrap()
+webscrap()
