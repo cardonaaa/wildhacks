@@ -8,47 +8,33 @@
 
 import Foundation
 
-func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]? {
-    // Load the CSV file and parse it
-    let delimiter = ","
-    var items:[(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]?
-    
-    if let content = String(contentsOfURL: contentsOfURL, encoding: encoding) {
-        items = []
-        let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
+class CSVParser {
+    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [Politician]? {
+        // Load the CSV file and parse it
+        let delimiter = ","
+        var items:[Politician]?
         
-        for line in lines {
-            var values:[String] = []
-            values = line.componentsSeparatedByString(delimiter)
-            // Put the values into the tuple and add it to the items array
-            let item = (lastname: values[0], firstname: values[1], party: values[2], phone: values[3], state: values[4], position: values[5], denounced: values[6])
-            items?.append(item)
-        }
-    }
-    
-    return items
-}
-
-
-func preloadData () {
-    // Retrieve data from the source file
-    if let contentsOfURL = NSBundle.mainBundle().URLForResource("politicians", withExtension: "csv") {
-        
-        if let items = parseCSV(contentsOfURL, NSUTF8StringEncoding) {
-            // Preload the menu items
-            if let managedObjectContext = self.managedObjectContext {
-                for item in items {
-                    let politician = NSEntityDescription.insertNewObjectForEntityForName("Politician", inManagedObjectContext: managedObjectContext) as! Politician
-                    politician.lastname = item.lastname
-                    politician.firstname = item.firstname
-                    politician.party = item.party
-                    politician.phone = item.phone
-                    politician.state = item.state
-                    politician.position = item.position
-                    politician.denounced = item.denounced
-                    
-                }
+        if let content = String(contentsOfURL: contentsOfURL, encoding: encoding) {
+            items = []
+            let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
+            
+            for line in lines {
+                var values:[String] = []
+                values = line.componentsSeparatedByString(delimiter)
+                // firstname, lastname, phone, position, state, party
+                let item = Politician(firstname: values[1], lastname: values[0], phone: values[3], position: values[5], state: values[4], party: values[2])
+                println(item)
+                items?.append(item)
             }
         }
+        
+        
+        return items
     }
 }
+
+var filePath = NSBundle.mainBundle().pathForResource("politicians", ofType: "csv")
+let csvURL = NSURL(string: "politicians.csv")!
+var error: NSErrorPointer = nil
+//let csv = CSwiftV(contentsOfURL: csvURL, error: error)
+CSVParser.parseCSV(csvURL)

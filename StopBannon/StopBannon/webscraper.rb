@@ -47,7 +47,6 @@ def webscrap()
                 
                 p = Politician.new(name, party, phone, state, 'Rep')
                 reps[name] = p
-                puts name
                 
                 last_name = name.split(',')[0]
                 first_name = name.split(',')[1]
@@ -70,7 +69,6 @@ def webscrap()
         first_name = name.split(',')[1]
         p = Politician.new(name, party, phone, state, 'Sen')
         reps[name] = p
-        puts name
         $all_politicians.push([last_name, first_name, party, phone, state, 'Sen', false])
     end
     
@@ -93,5 +91,4 @@ def write_to_file()
     IO.write(file, csv_string)
 end
 
-# jstreet_webscrap()
 write_to_file()
