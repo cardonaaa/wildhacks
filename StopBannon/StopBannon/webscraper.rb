@@ -41,4 +41,13 @@ def webscrap()
 
 end
 
-webscrap()
+def jstreet_webscrap()
+    url = 'http://jstreet.org/members-congress-condemned-bannons-appointment/'
+    parse_page = Nokogiri::HTML(open(url))
+    table = parse_page.css("nav.tableOfContents li")
+    table.each { |li|
+        temp = li.text.strip()[5..-1]
+    }
+end
+
+jstreet_webscrap()
