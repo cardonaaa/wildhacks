@@ -8,12 +8,12 @@
 
 import Foundation
 
-func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]? {
+func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]? {
     // Load the CSV file and parse it
     let delimiter = ","
     var items:[(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]?
     
-    if let content = String(contentsOfURL: contentsOfURL, encoding: encoding, error: error) {
+    if let content = String(contentsOfURL: contentsOfURL, encoding: encoding) {
         items = []
         let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
         
@@ -33,8 +33,8 @@ func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorP
 func preloadData () {
     // Retrieve data from the source file
     if let contentsOfURL = NSBundle.mainBundle().URLForResource("politicians", withExtension: "csv") {
-        var error:NSError?
-        if let items = parseCSV(contentsOfURL, NSUTF8StringEncoding, error: &error) {
+        
+        if let items = parseCSV(contentsOfURL, NSUTF8StringEncoding) {
             // Preload the menu items
             if let managedObjectContext = self.managedObjectContext {
                 for item in items {
@@ -47,9 +47,6 @@ func preloadData () {
                     politician.position = item.position
                     politician.denounced = item.denounced
                     
-                    if managedObjectContext.save(&error) != true {
-                        println("insert error: \(error!.localizedDescription)")
-                    }
                 }
             }
         }
