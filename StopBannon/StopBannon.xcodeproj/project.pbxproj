@@ -14,6 +14,10 @@
 		6CE9DDD01DE0141000FCF6B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9DDCF1DE0141000FCF6B7 /* Images.xcassets */; };
 		6CE9DDD31DE0141000FCF6B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9DDD11DE0141000FCF6B7 /* LaunchScreen.xib */; };
 		6CE9DDDF1DE0141000FCF6B7 /* StopBannonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DDDE1DE0141000FCF6B7 /* StopBannonTests.swift */; };
+		9DB201521DE03D2500DDC367 /* webscraper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 9DB201511DE03D2500DDC367 /* webscraper.rb */; };
+		9DB201541DE0B0E100DDC367 /* csvparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB201531DE0B0E100DDC367 /* csvparser.swift */; };
+		9DB201571DE0C01600DDC367 /* Politician.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DB201551DE0C01600DDC367 /* Politician.xcdatamodeld */; };
+		9DB201591DE0C32F00DDC367 /* politicianmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB201581DE0C32F00DDC367 /* politicianmodel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		6CE9DDD81DE0141000FCF6B7 /* StopBannonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopBannonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE9DDDD1DE0141000FCF6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CE9DDDE1DE0141000FCF6B7 /* StopBannonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopBannonTests.swift; sourceTree = "<group>"; };
+		9DB201511DE03D2500DDC367 /* webscraper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = webscraper.rb; sourceTree = "<group>"; };
+		9DB201531DE0B0E100DDC367 /* csvparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvparser.swift; sourceTree = "<group>"; };
+		9DB201561DE0C01600DDC367 /* Politician.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Politician.xcdatamodel; sourceTree = "<group>"; };
+		9DB201581DE0C32F00DDC367 /* politicianmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = politicianmodel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		6CE9DDC31DE0141000FCF6B7 /* StopBannon */ = {
 			isa = PBXGroup;
 			children = (
+				9DB201511DE03D2500DDC367 /* webscraper.rb */,
 				6CE9DDC61DE0141000FCF6B7 /* AppDelegate.swift */,
 				6CE9DDC81DE0141000FCF6B7 /* FirstViewController.swift */,
 				6CE9DDCA1DE0141000FCF6B7 /* SecondViewController.swift */,
@@ -86,6 +95,9 @@
 				6CE9DDCF1DE0141000FCF6B7 /* Images.xcassets */,
 				6CE9DDD11DE0141000FCF6B7 /* LaunchScreen.xib */,
 				6CE9DDC41DE0141000FCF6B7 /* Supporting Files */,
+				9DB201531DE0B0E100DDC367 /* csvparser.swift */,
+				9DB201551DE0C01600DDC367 /* Politician.xcdatamodeld */,
+				9DB201581DE0C32F00DDC367 /* politicianmodel.swift */,
 			);
 			path = StopBannon;
 			sourceTree = "<group>";
@@ -196,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE9DDCE1DE0141000FCF6B7 /* Main.storyboard in Resources */,
+				9DB201521DE03D2500DDC367 /* webscraper.rb in Resources */,
 				6CE9DDD31DE0141000FCF6B7 /* LaunchScreen.xib in Resources */,
 				6CE9DDD01DE0141000FCF6B7 /* Images.xcassets in Resources */,
 			);
@@ -218,6 +231,9 @@
 				6CE9DDCB1DE0141000FCF6B7 /* SecondViewController.swift in Sources */,
 				6CE9DDC71DE0141000FCF6B7 /* AppDelegate.swift in Sources */,
 				6CE9DDC91DE0141000FCF6B7 /* FirstViewController.swift in Sources */,
+				9DB201591DE0C32F00DDC367 /* politicianmodel.swift in Sources */,
+				9DB201541DE0B0E100DDC367 /* csvparser.swift in Sources */,
+				9DB201571DE0C01600DDC367 /* Politician.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +427,7 @@
 				6CE9DDE41DE0141000FCF6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6CE9DDE51DE0141000FCF6B7 /* Build configuration list for PBXNativeTarget "StopBannonTests" */ = {
 			isa = XCConfigurationList;
@@ -419,8 +436,22 @@
 				6CE9DDE71DE0141000FCF6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9DB201551DE0C01600DDC367 /* Politician.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9DB201561DE0C01600DDC367 /* Politician.xcdatamodel */,
+			);
+			currentVersion = 9DB201561DE0C01600DDC367 /* Politician.xcdatamodel */;
+			path = Politician.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6CE9DDB91DE0141000FCF6B7 /* Project object */;
 }
