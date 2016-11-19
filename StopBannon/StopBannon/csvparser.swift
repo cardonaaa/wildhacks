@@ -32,16 +32,20 @@ func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorP
 
 func preloadData () {
     // Retrieve data from the source file
-    if let contentsOfURL = NSBundle.mainBundle().URLForResource("menudata", withExtension: "csv") {
-        NSError* error = nil;
+    if let contentsOfURL = NSBundle.mainBundle().URLForResource("politicians", withExtension: "csv") {
+        var error:NSError?
         if let items = parseCSV(contentsOfURL, NSUTF8StringEncoding, error: &error) {
             // Preload the menu items
             if let managedObjectContext = self.managedObjectContext {
                 for item in items {
-                    let menuItem = NSEntityDescription.insertNewObjectForEntityForName("MenuItem", inManagedObjectContext: managedObjectContext) as! MenuItem
-                    menuItem.name = item.name
-                    menuItem.detail = item.detail
-                    menuItem.price = (item.price as NSString).doubleValue
+                    let politician = NSEntityDescription.insertNewObjectForEntityForName("Politician", inManagedObjectContext: managedObjectContext) as! Politician
+                    politician.lastname = item.lastname
+                    politician.firstname = item.firstname
+                    politician.party = item.party
+                    politician.phone = item.phone
+                    politician.state = item.state
+                    politician.position = item.position
+                    politician.denounced = item.denounced
                     
                     if managedObjectContext.save(&error) != true {
                         println("insert error: \(error!.localizedDescription)")
