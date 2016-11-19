@@ -43,25 +43,22 @@ def webscrap()
                 
                 p = Politician.new(name, party, phone, state, 'Rep')
                 reps[name] = p
-                #puts name
+                puts name
 
             end
         end
     end
     
     senators_url = 'http://www.senate.gov/senators/contact/'
-    senate_page = Nokogiri::HTML(open(url))
+    senate_page = Nokogiri::HTML(open(senators_url))
     
-    for i in (0..300).step(3)
-        puts "hello"
-        puts i
-        puts senate_page.css("td.contenttext[align='left']")[0]
+    for i in (0..299).step(3)
         name = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[0]
         party = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[0]
         state = senate_page.css("td.contenttext[align='left']")[i].text.split("\n")[2].gsub(/[^0-9A-Za-z ]/, '').split(" ")[1]
         number = senate_page.css("td.contenttext[align='left']")[i+1].text
         
-        p = Politician.new(name, party, phone, state, 'Sen')
+        p = Politician.new(name, party, number, state, 'Sen')
         reps[name] = p
         puts name
     end
