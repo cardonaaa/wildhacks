@@ -8,18 +8,18 @@
 
 import Foundation
 
-func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]? {
+func parseCSV (_ contentsOfURL: URL, encoding: String.Encoding) -> [(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]? {
     // Load the CSV file and parse it
     let delimiter = ","
     var items:[(lastname:String, firstname:String, party: String, phone:String, state:String, position:String, denounced:String)]?
     
-    if let content = String(contentsOfURL: contentsOfURL, encoding: encoding) {
+    if let content = String(contentsOf: contentsOfURL, encoding: encoding) {
         items = []
-        let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
+        let lines:[String] = content.componentsSeparatedByCharactersInSet(CharacterSet.newlineCharacterSet()) as [String]
         
         for line in lines {
             var values:[String] = []
-            values = line.componentsSeparatedByString(delimiter)
+            values = line.components(separatedBy: delimiter)
             // Put the values into the tuple and add it to the items array
             let item = (lastname: values[0], firstname: values[1], party: values[2], phone: values[3], state: values[4], position: values[5], denounced: values[6])
             items?.append(item)
@@ -32,9 +32,9 @@ func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(lastname:S
 
 func preloadData () {
     // Retrieve data from the source file
-    if let contentsOfURL = NSBundle.mainBundle().URLForResource("politicians", withExtension: "csv") {
+    if let contentsOfURL = Bundle.main.url(forResource: "politicians", withExtension: "csv") {
         
-        if let items = parseCSV(contentsOfURL, NSUTF8StringEncoding) {
+        if let items = parseCSV(contentsOfURL, String.Encoding.utf8) {
             // Preload the menu items
             if let managedObjectContext = self.managedObjectContext {
                 for item in items {

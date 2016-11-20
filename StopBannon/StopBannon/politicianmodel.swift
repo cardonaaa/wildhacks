@@ -15,18 +15,18 @@ class DataController: NSObject {
     override init() {
         var error:NSError? = nil
         // This resource is the same name as your xcdatamodeld contained in your project.
-        if let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension:"momd") {
-            if let mom = NSManagedObjectModel(contentsOfURL: modelURL) {
+        if let modelURL = Bundle.main.url(forResource: "DataModel", withExtension:"momd") {
+            if let mom = NSManagedObjectModel(contentsOf: modelURL) {
                 let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
-                managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+                managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
                 managedObjectContext.persistentStoreCoordinator = psc
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-                    let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+                DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async {
+                    let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
                     let docURL = urls[urls.endIndex-1]
                     /* The directory the application uses to store the Core Data store file.
                     This code uses a file named "DataModel.sqlite" in the application's documents directory.
                     */
-                    let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
+                    let storeURL = docURL.appendingPathComponent("DataModel.sqlite")
                     psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error)
                 }
             } else {
