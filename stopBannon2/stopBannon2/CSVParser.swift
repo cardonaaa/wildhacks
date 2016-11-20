@@ -27,12 +27,7 @@ class CSVParser {
                 items?.append(item)
             }
         }
+        
         return items
     }
 }
-
-var filePath = NSBundle.mainBundle().pathForResource("politicians", ofType: "csv")
-let csvURL = NSURL(string: "politicians.csv")!
-var error: NSErrorPointer = nil
-//let csv = CSwiftV(contentsOfURL: csvURL, error: error)
-CSVParser.parseCSV(csvURL)

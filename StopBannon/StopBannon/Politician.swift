@@ -42,12 +42,12 @@ class Politician: NSObject, NSCoding {
     }
     
     required convenience init(coder decoder: NSCoder) {
-        let firstname = decoder.decodeObjectForKey("firstname") as! String
-        let lastname = decoder.decodeObjectForKey("lastname") as! String
-        let phone = decoder.decodeObjectForKey("phone") as! String
-        let position = decoder.decodeObjectForKey("positiion") as! String
-        let state = decoder.decodeObjectForKey("state") as! String
-        let party = decoder.decodeObjectForKey("party") as! String
+        let firstname = decoder.decodeObject(forKey: "firstname") as! String
+        let lastname = decoder.decodeObject(forKey: "lastname") as! String
+        let phone = decoder.decodeObject(forKey: "phone") as! String
+        let position = decoder.decodeObject(forKey: "positiion") as! String
+        let state = decoder.decodeObject(forKey: "state") as! String
+        let party = decoder.decodeObject(forKey: "party") as! String
 
         self.init(
             firstname: firstname,
@@ -59,21 +59,21 @@ class Politician: NSObject, NSCoding {
         )
     }
     
-    func encodeWithCoder(coder: NSCoder) {
-        coder.encodeObject(self.firstname, forKey: "firstname")
-        coder.encodeObject(self.lastname, forKey: "lastname")
-        coder.encodeObject(self.phone, forKey: "phone")
-        coder.encodeObject(self.position, forKey: "position")
-        coder.encodeObject(self.state, forKey: "state")
-        coder.encodeObject(self.party, forKey: "party")
-        coder.encodeBool(self.denounced, forKey: "denounced")
+    func encode(with coder: NSCoder) {
+        coder.encode(self.firstname, forKey: "firstname")
+        coder.encode(self.lastname, forKey: "lastname")
+        coder.encode(self.phone, forKey: "phone")
+        coder.encode(self.position, forKey: "position")
+        coder.encode(self.state, forKey: "state")
+        coder.encode(self.party, forKey: "party")
+        coder.encode(self.denounced, forKey: "denounced")
     }
     
     
     
     // MARK: Archiving Paths
     
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("politicians")
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("politicians")
     
 }
