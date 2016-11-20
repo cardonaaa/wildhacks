@@ -14,9 +14,10 @@
 		6CB6414C1DE136C30099A32D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB6414B1DE136C30099A32D /* Assets.xcassets */; };
 		6CB6414F1DE136C30099A32D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB6414D1DE136C30099A32D /* LaunchScreen.storyboard */; };
 		6CB6415A1DE136C30099A32D /* stopBannon2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB641591DE136C30099A32D /* stopBannon2Tests.swift */; };
-		6CB641671DE137AB0099A32D /* csvparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB641641DE137AB0099A32D /* csvparser.swift */; };
-		6CB641681DE137AB0099A32D /* Politician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB641651DE137AB0099A32D /* Politician.swift */; };
 		6CB641691DE137AB0099A32D /* webscraper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 6CB641661DE137AB0099A32D /* webscraper.rb */; };
+		6CB641721DE13A310099A32D /* Politician+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB641701DE13A310099A32D /* Politician+CoreDataClass.swift */; };
+		6CB641731DE13A310099A32D /* Politician+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB641711DE13A310099A32D /* Politician+CoreDataProperties.swift */; };
+		6CB641751DE13AC20099A32D /* politicians.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6CB641741DE13AC20099A32D /* politicians.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +42,10 @@
 		6CB641551DE136C30099A32D /* stopBannon2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stopBannon2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB641591DE136C30099A32D /* stopBannon2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopBannon2Tests.swift; sourceTree = "<group>"; };
 		6CB6415B1DE136C30099A32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CB641641DE137AB0099A32D /* csvparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvparser.swift; sourceTree = "<group>"; };
-		6CB641651DE137AB0099A32D /* Politician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Politician.swift; sourceTree = "<group>"; };
 		6CB641661DE137AB0099A32D /* webscraper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = webscraper.rb; sourceTree = "<group>"; };
+		6CB641701DE13A310099A32D /* Politician+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Politician+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6CB641711DE13A310099A32D /* Politician+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Politician+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6CB641741DE13AC20099A32D /* politicians.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = politicians.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,8 @@
 		6CB641351DE136C30099A32D = {
 			isa = PBXGroup;
 			children = (
+				6CB641701DE13A310099A32D /* Politician+CoreDataClass.swift */,
+				6CB641711DE13A310099A32D /* Politician+CoreDataProperties.swift */,
 				6CB641401DE136C30099A32D /* stopBannon2 */,
 				6CB641581DE136C30099A32D /* stopBannon2Tests */,
 				6CB6413F1DE136C30099A32D /* Products */,
@@ -85,11 +89,10 @@
 		6CB641401DE136C30099A32D /* stopBannon2 */ = {
 			isa = PBXGroup;
 			children = (
+				6CB641741DE13AC20099A32D /* politicians.csv */,
 				6CB641411DE136C30099A32D /* AppDelegate.swift */,
 				6CB641431DE136C30099A32D /* ViewController.swift */,
 				6CB641451DE136C30099A32D /* Main.storyboard */,
-				6CB641641DE137AB0099A32D /* csvparser.swift */,
-				6CB641651DE137AB0099A32D /* Politician.swift */,
 				6CB641661DE137AB0099A32D /* webscraper.rb */,
 				6CB6414B1DE136C30099A32D /* Assets.xcassets */,
 				6CB6414D1DE136C30099A32D /* LaunchScreen.storyboard */,
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB6414F1DE136C30099A32D /* LaunchScreen.storyboard in Resources */,
+				6CB641751DE13AC20099A32D /* politicians.csv in Resources */,
 				6CB641691DE137AB0099A32D /* webscraper.rb in Resources */,
 				6CB6414C1DE136C30099A32D /* Assets.xcassets in Resources */,
 				6CB641471DE136C30099A32D /* Main.storyboard in Resources */,
@@ -215,10 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB6414A1DE136C30099A32D /* stopBannon2.xcdatamodeld in Sources */,
-				6CB641681DE137AB0099A32D /* Politician.swift in Sources */,
+				6CB641721DE13A310099A32D /* Politician+CoreDataClass.swift in Sources */,
 				6CB641441DE136C30099A32D /* ViewController.swift in Sources */,
+				6CB641731DE13A310099A32D /* Politician+CoreDataProperties.swift in Sources */,
 				6CB641421DE136C30099A32D /* AppDelegate.swift in Sources */,
-				6CB641671DE137AB0099A32D /* csvparser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
