@@ -1,15 +1,15 @@
 //
-//  StopBannonTests.swift
-//  StopBannonTests
+//  stopBannon2Tests.swift
+//  stopBannon2Tests
 //
-//  Created by Kyle Jablon on 11/18/16.
-//  Copyright (c) 2016 Kyle Jablon. All rights reserved.
+//  Created by Kyle Jablon on 11/19/16.
+//  Copyright © 2016 Kyle Jablon. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import stopBannon2
 
-class StopBannonTests: XCTestCase {
+class stopBannon2Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class StopBannonTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure() {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

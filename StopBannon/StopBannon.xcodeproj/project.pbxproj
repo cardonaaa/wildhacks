@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C3EE0411DE0EDFF00C7DF4A /* Politician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EE0401DE0EDFF00C7DF4A /* Politician.swift */; };
+		6C3EE0441DE0EE3900C7DF4A /* csvparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EE0421DE0EE3900C7DF4A /* csvparser.swift */; };
+		6C3EE0451DE0EE3900C7DF4A /* webscraper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 6C3EE0431DE0EE3900C7DF4A /* webscraper.rb */; };
 		6CE9DDC71DE0141000FCF6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DDC61DE0141000FCF6B7 /* AppDelegate.swift */; };
 		6CE9DDC91DE0141000FCF6B7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DDC81DE0141000FCF6B7 /* FirstViewController.swift */; };
 		6CE9DDCB1DE0141000FCF6B7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DDCA1DE0141000FCF6B7 /* SecondViewController.swift */; };
@@ -14,10 +17,7 @@
 		6CE9DDD01DE0141000FCF6B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9DDCF1DE0141000FCF6B7 /* Images.xcassets */; };
 		6CE9DDD31DE0141000FCF6B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9DDD11DE0141000FCF6B7 /* LaunchScreen.xib */; };
 		6CE9DDDF1DE0141000FCF6B7 /* StopBannonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DDDE1DE0141000FCF6B7 /* StopBannonTests.swift */; };
-		9DB201521DE03D2500DDC367 /* webscraper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 9DB201511DE03D2500DDC367 /* webscraper.rb */; };
-		9DB201541DE0B0E100DDC367 /* csvparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB201531DE0B0E100DDC367 /* csvparser.swift */; };
-		9DB201571DE0C01600DDC367 /* Politician.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DB201551DE0C01600DDC367 /* Politician.xcdatamodeld */; };
-		9DB201591DE0C32F00DDC367 /* politicianmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB201581DE0C32F00DDC367 /* politicianmodel.swift */; };
+		6CE9DDE91DE0228600FCF6B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DDE81DE0228600FCF6B7 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C3EE0401DE0EDFF00C7DF4A /* Politician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Politician.swift; sourceTree = "<group>"; };
+		6C3EE0421DE0EE3900C7DF4A /* csvparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvparser.swift; sourceTree = "<group>"; };
+		6C3EE0431DE0EE3900C7DF4A /* webscraper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = webscraper.rb; sourceTree = "<group>"; };
 		6CE9DDC11DE0141000FCF6B7 /* StopBannon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopBannon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE9DDC51DE0141000FCF6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CE9DDC61DE0141000FCF6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +45,7 @@
 		6CE9DDD81DE0141000FCF6B7 /* StopBannonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopBannonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE9DDDD1DE0141000FCF6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CE9DDDE1DE0141000FCF6B7 /* StopBannonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopBannonTests.swift; sourceTree = "<group>"; };
-		9DB201511DE03D2500DDC367 /* webscraper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = webscraper.rb; sourceTree = "<group>"; };
-		9DB201531DE0B0E100DDC367 /* csvparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvparser.swift; sourceTree = "<group>"; };
-		9DB201561DE0C01600DDC367 /* Politician.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Politician.xcdatamodel; sourceTree = "<group>"; };
-		9DB201581DE0C32F00DDC367 /* politicianmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = politicianmodel.swift; sourceTree = "<group>"; };
+		6CE9DDE81DE0228600FCF6B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,17 +87,17 @@
 		6CE9DDC31DE0141000FCF6B7 /* StopBannon */ = {
 			isa = PBXGroup;
 			children = (
-				9DB201511DE03D2500DDC367 /* webscraper.rb */,
+				6C3EE0421DE0EE3900C7DF4A /* csvparser.swift */,
+				6C3EE0431DE0EE3900C7DF4A /* webscraper.rb */,
+				6C3EE0401DE0EDFF00C7DF4A /* Politician.swift */,
 				6CE9DDC61DE0141000FCF6B7 /* AppDelegate.swift */,
+				6CE9DDE81DE0228600FCF6B7 /* User.swift */,
 				6CE9DDC81DE0141000FCF6B7 /* FirstViewController.swift */,
 				6CE9DDCA1DE0141000FCF6B7 /* SecondViewController.swift */,
 				6CE9DDCC1DE0141000FCF6B7 /* Main.storyboard */,
 				6CE9DDCF1DE0141000FCF6B7 /* Images.xcassets */,
 				6CE9DDD11DE0141000FCF6B7 /* LaunchScreen.xib */,
 				6CE9DDC41DE0141000FCF6B7 /* Supporting Files */,
-				9DB201531DE0B0E100DDC367 /* csvparser.swift */,
-				9DB201551DE0C01600DDC367 /* Politician.xcdatamodeld */,
-				9DB201581DE0C32F00DDC367 /* politicianmodel.swift */,
 			);
 			path = StopBannon;
 			sourceTree = "<group>";
@@ -171,11 +171,12 @@
 		6CE9DDB91DE0141000FCF6B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Kyle Jablon";
 				TargetAttributes = {
 					6CE9DDC01DE0141000FCF6B7 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = AVKJCK3USW;
 						LastSwiftMigration = 0810;
 					};
 					6CE9DDD71DE0141000FCF6B7 = {
@@ -210,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE9DDCE1DE0141000FCF6B7 /* Main.storyboard in Resources */,
-				9DB201521DE03D2500DDC367 /* webscraper.rb in Resources */,
+				6C3EE0451DE0EE3900C7DF4A /* webscraper.rb in Resources */,
 				6CE9DDD31DE0141000FCF6B7 /* LaunchScreen.xib in Resources */,
 				6CE9DDD01DE0141000FCF6B7 /* Images.xcassets in Resources */,
 			);
@@ -230,12 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CE9DDE91DE0228600FCF6B7 /* User.swift in Sources */,
+				6C3EE0411DE0EDFF00C7DF4A /* Politician.swift in Sources */,
 				6CE9DDCB1DE0141000FCF6B7 /* SecondViewController.swift in Sources */,
+				6C3EE0441DE0EE3900C7DF4A /* csvparser.swift in Sources */,
 				6CE9DDC71DE0141000FCF6B7 /* AppDelegate.swift in Sources */,
 				6CE9DDC91DE0141000FCF6B7 /* FirstViewController.swift in Sources */,
-				9DB201591DE0C32F00DDC367 /* politicianmodel.swift in Sources */,
-				9DB201541DE0B0E100DDC367 /* csvparser.swift in Sources */,
-				9DB201571DE0C01600DDC367 /* Politician.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,15 +291,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -333,8 +338,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -342,6 +349,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -351,6 +359,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -360,8 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AVKJCK3USW;
 				INFOPLIST_FILE = StopBannon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.server.pgmname;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -371,8 +382,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AVKJCK3USW;
 				INFOPLIST_FILE = StopBannon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.server.pgmname;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -392,6 +405,7 @@
 				);
 				INFOPLIST_FILE = StopBannonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-University-of-Chicago.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StopBannon.app/StopBannon";
@@ -408,6 +422,7 @@
 				);
 				INFOPLIST_FILE = StopBannonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-University-of-Chicago.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StopBannon.app/StopBannon";
@@ -445,19 +460,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9DB201551DE0C01600DDC367 /* Politician.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9DB201561DE0C01600DDC367 /* Politician.xcdatamodel */,
-			);
-			currentVersion = 9DB201561DE0C01600DDC367 /* Politician.xcdatamodel */;
-			path = Politician.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6CE9DDB91DE0141000FCF6B7 /* Project object */;
 }

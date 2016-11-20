@@ -13,11 +13,11 @@ class CSVParser {
         let csvURL = NSURL(string: "politicians.csv")!
         let delimiter = ","
         var items:[Politician]?
-
+        
         if let content = String(contentsOfURL: csvURL, encoding: NSUTF8StringEncoding) {
             items = []
             let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
-
+            
             for line in lines {
                 var values:[String] = []
                 values = line.componentsSeparatedByString(delimiter)
@@ -27,12 +27,7 @@ class CSVParser {
                 items?.append(item)
             }
         }
+        
         return items
     }
 }
-
-var filePath = NSBundle.mainBundle().pathForResource("politicians", ofType: "csv")
-let csvURL = NSURL(string: "politicians.csv")!
-var error: NSErrorPointer = nil
-//let csv = CSwiftV(contentsOfURL: csvURL, error: error)
-CSVParser.parseCSV(csvURL)
