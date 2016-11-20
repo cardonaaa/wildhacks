@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3F9418B0-3EBA-40B0-B248-78FDBC6E654D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>StopBannon</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9B676048B75F36A3BE90CDCE774742197399982A</key>
 		<string>https://github.com/kylej1994/wildhacks-1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>StopBannon/StopBannon.xcodeproj</string>
+	<string>StopBannon/StopBannon.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9B676048B75F36A3BE90CDCE774742197399982A</key>
