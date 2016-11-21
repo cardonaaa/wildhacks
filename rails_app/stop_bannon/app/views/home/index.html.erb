@@ -4,12 +4,18 @@
     <th>First Name</th>
     <th>Last Name</th>
     <th>Party</th>
+    <th>State</th>
+    <th>Position</th>
+    <th>Phone</th>
   </tr>
-<% Politician.all.each do |data| %>
+<% @politicians.each do |data| %>
   <tr>
     <td><%= data.first_name %></td>
     <td><%= data.last_name %></td>
-    <td><%= data.party=='D' ? 'Democrat' : 'Republican'%> </td> 
+    <td><%= data.party=='D' ? 'Democrat' : 'Republican'%> </td>
+    <td><%= data.state %></td>
+    <td><%= data.position=='Sen' ? 'Senator' : 'Representative' %></td>
+    <td><%= data.phone %></td>
   </tr>
 <% end %>
 </table>
