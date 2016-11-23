@@ -17,25 +17,15 @@ $states = { "Alabama" => "AL" , "Alaska" => "AK", "Arizona" => "AZ", "Arkansas" 
 "Utah" => "UT",  "Vermont" => "VT", "Virginia" => "VA", "Washington" => "WA",
 "West Virginia" => "WV", "Wisconsin" => "WI", "Wyoming" => "WY" }
 
-class Politician
-    def initialize(name, party, phone, state, position)
-        @name = name
-        @party = party
-        @phone = phone
-        @state = state
-        @position = position
-        @denounced = false
-    end
-end
-
 $all_politicians = []
+
+$denounced = []
 
 def webscrap()
 
     url = 'http://www.house.gov/representatives/'
     parse_page = Nokogiri::HTML(open(url))
     state_list = parse_page.css("tbody")
-    reps = Hash.new
     (0..55).each do |i|
         state = $states[parse_page.css("h2")[i+1].text]
         if state_list[i].css("tr")
@@ -43,9 +33,6 @@ def webscrap()
                 name = s.css("td")[1].text.gsub(/\s+/, "")
                 party = s.css("td")[2].text
                 phone = s.css("td")[4].text
-
-                p = Politician.new(name, party, phone, state, 'Rep')
-                reps[name] = p
 
                 last_name = name.split(',')[0]
                 first_name = name.split(',')[1]
@@ -66,25 +53,40 @@ def webscrap()
 
         last_name = name.split(',')[0]
         first_name = name.split(',')[1]
-        p = Politician.new(name, party, phone, state, 'Sen')
-        reps[name] = p
         $all_politicians.push([last_name, first_name, party, phone, state, 'Sen', false])
     end
 
-    return reps
 end
 
 def jstreet_webscrap()
+    denounced = []
     url = 'http://jstreet.org/members-congress-condemned-bannons-appointment/'
     parse_page = Nokogiri::HTML(open(url))
     table = parse_page.css("nav.tableOfContents li")
     table.each { |li|
         temp = li.text.strip()[5..-1]
+        if temp
+          temp = temp.split(" ")
+          partial_first = temp[0]
+          partial_last = temp[-1]
+          $denounced.push([partial_first, partial_last])
+        end
     }
 end
 
+def matched_stances()
+  webscrap()
+  jstreet_webscrap()
+  $denounced.each do |first, last|
+    pol_index = $all_politicians.each_index.select{|i| $all_politicians[i][1].include? first and $all_politicians[i][0].include? last}
+    pol_index.each do |i|
+      $all_politicians[i][-1] = true
+    end
+  end
+end
+
 def write_to_file()
-    webscrap()
+    matched_stances()
     csv_string = $all_politicians.map(&:to_csv).join
     file = 'politicians.csv'
     IO.write(file, csv_string)
