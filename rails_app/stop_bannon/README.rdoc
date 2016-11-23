@@ -7,4 +7,3 @@ Tools used: Ruby on Rails, Nokogiri for web scraping the senators' and represent
 Includes our motivation, talking scripts to use, and a list of who people should call, their phone numbers, and more. 
 
 Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
