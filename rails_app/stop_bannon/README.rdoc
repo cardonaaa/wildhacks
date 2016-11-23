@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web app to help people gather the information they need to make a difference and #StopBannon. 
 
-Things you may want to cover:
+Tools used: Ruby on Rails, Nokogiri for web scraping the senators' and representatives' information. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+Includes our motivation, talking scripts to use, and a list of who people should call, their phone numbers, and more. 
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
