@@ -8,7 +8,6 @@ namespace :politicians do
   task populate: :environment do
     csv = 'politicians.csv'
 
-    print Dir.pwd
     CSV.foreach('politicians.csv', :headers => false) do |row|
       Politician.create!(make_hash(row))
     end
