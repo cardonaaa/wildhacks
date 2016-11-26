@@ -14,3 +14,8 @@
  *= require_self
  *= require bootstrap.min
  */
+
+.contact {
+    padding-top:30px;
+    padding-bottom:15px;
+ }
